@@ -6,20 +6,32 @@
 输入: 密码。
 
 输出: 密码的安全与否，作为布尔值(bool)，或者任何可以转换和处理为布尔值的数据类型。你会在结果看到转换后的结果(True 或 False)。
+
+范例:
+checkio('A1213pokl') == False
+checkio('bAse730onE') == True
+checkio('asasasasasasasaas') == False
+checkio('QWERTYqwerty') == False
+checkio('123456123456') == False
+checkio('QwErTy911poqqqq') == True
+
+如何使用: 如果你担心你的应用或服务的安全性，您可以检查用户密码的复杂性。你可以使用这些技巧要求你的用户的密码符合多个条件（标点符号或unicode）。
+
+前提:
+re.match("[a-zA-Z0-9]+", password)
+0 < len(password) ≤ 64
 """
 
 
 def checkio(data: str) -> bool:
     # IF-ELSE
     _is_len_gt10 = False
-    _is_alnum = False
     _is_lower = False
     _is_upper = False
     _is_digit = False
+
     if len(data) >= 10:
         _is_len_gt10 = True
-    if data.isalnum():
-        _is_alnum = True
     for _ in data:
         if _.islower():
             _is_lower = True
@@ -27,7 +39,7 @@ def checkio(data: str) -> bool:
             _is_upper = True
         if _.isdigit():
             _is_digit = True
-    if all([_is_len_gt10, _is_alnum, _is_lower, _is_upper, _is_digit]):
+    if all([_is_len_gt10, _is_lower, _is_upper, _is_digit]):
         return True
     return False
 
@@ -44,4 +56,4 @@ if __name__ == '__main__':
     assert checkio('QWERTYqwerty') == False, "4th example"
     assert checkio('123456123456') == False, "5th example"
     assert checkio('QwErTy911poqqqq') == True, "6th example"
-    print("Coding complete? Click 'Check' to review your tests and earn cool rewards!")
+    print("Test passed!")

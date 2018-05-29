@@ -13,7 +13,7 @@ def checkio(text):
     'max' selects the first from they.
     """
     text = text.lower()
-    return max(string.ascii_lowercase, key=text.count)
+    return max(string.ascii_lowercase, key=text.count)  # == return max(string.ascii_lowercase, key=lambda x: text.count(x))
 
 
 # ====================================================================================================================================================

@@ -1,6 +1,6 @@
 """
 ======================================================================================================================================================
-cr.bryukh from py.checkio.org
+cr.Sim0000 from py.checkio.org
 
 1."w for w in words" is a generator.
 2."w in text.lower()" returns a bool signature.
